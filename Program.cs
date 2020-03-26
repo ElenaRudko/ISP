@@ -44,7 +44,7 @@ namespace ConsoleApp1
 		
 			Console.WriteLine("\n--------------Строка с знаками препинания---------------------");
 
-			char[] punctuationMarks = new char[] { ',', '.', '-', ':', ';', '!', '?' };
+			char[]s = new char[] { ',', '.', '-', ':', ';', '!', '?' };
 
 			Console.Write("Введите строку: ");
 			str = Console.ReadLine();
@@ -53,7 +53,7 @@ namespace ConsoleApp1
 			for (int i = 0; i < strBuild.Length; i++)
 			{
 				bool flag = false;
-				for (int j = 0; j < punctuationMarks.Length; j++)
+				for (int j = 0; j < s.Length; j++)
 				{
 					if (strBuild[i] == punctuationMarks[j])
 					{
@@ -62,14 +62,14 @@ namespace ConsoleApp1
 							if (strBuild[k] == ' ')
 							{
 
-								strBuild.Insert(k + 1, punctuationMarks[j]);
+								strBuild.Insert(k + 1, s[j]);
 								++i;
 								flag = true;
 								break;
 							}
 							else if (k == 0)
 							{
-								strBuild.Insert(k, punctuationMarks[j]);
+								strBuild.Insert(k, s[j]);
 								++i;
 								flag = true;
 								break;
