@@ -8,7 +8,7 @@ namespace laba3
 	class People
 	{
 		protected static int objectsCounter;
-		protected string Name { get; set; }
+		protected stringName { get; set; }
 		protected string Pol { get; set; }
 		public People(string name,string pol)
 		{
@@ -89,7 +89,6 @@ namespace laba3
 			Console.WriteLine("Cпециальность: " + Specialty);
 			Console.WriteLine();
 		}
-		//Перегрузка.
 		public void vivod(bool formatted)
 		{
 			Console.WriteLine("FIO: " + Name);
@@ -116,7 +115,6 @@ namespace laba3
 		for (int i = 0; i < kol; i++)
 		{
 			mas[i].vivod();
-			//двойной вывод чисто. Задание с перегрузкой
 			mas[i].vivod(true);
 			}
 			People.numberOfObjects();
