@@ -7,39 +7,43 @@ namespace laba3
 {
 	class People
 	{
-		protected static int objectsCounter;
-		protected string Name { get; set; }
-		protected string Pol { get; set; }
-		public string this[string st]
+		private static int objectsCounter;
+		private string Name { get; set; }
+		protected string Sex { get; set; }
+		protected string getName()
+		{
+			return Name;
+		}
+		public string this[string prop]
 		{
 			get
 			{
-				switch (st)
+				switch (prop)
 				{
 					case "name": return Name;
-					case "pol": return Pol;
+					case "pol": return Sex;
 					default: return "не найдено";
 				}
 			}
 			set
 			{
-				switch (st)
+				switch (prop)
 				{
 					case "name":
 						Name = value;
 						break;
-					case "pol":
-						Pol = value;
+					case "sex":
+						Sex = value;
 						break;
 					default:
 						break;
 				}
 			}
 		}
-		public People(string name, string pol)
+		public People(string name, string sex)
 		{
 			Name = name;
-			Pol = pol;
+			Sex = sex;
 			objectsCounter++;
 		}
 		public People()
@@ -47,7 +51,7 @@ namespace laba3
 			Console.WriteLine("Введите ФИО:");
 			Name = Console.ReadLine();
 			Console.WriteLine("Введите ПОЛ:");
-			Pol = Console.ReadLine();
+			Sex = Console.ReadLine();
 			objectsCounter++;
 		}
 		public static void NumberOfObjects()
@@ -58,8 +62,8 @@ namespace laba3
 	class Student : People
 	{
 		protected int Group { get; set; }
-		public Student(string name, string pol, int group)
-			: base(name, pol)
+		public Student(string name, string sex, int group)
+			: base(name, sex)
 		{
 			Group = group;
 		}
@@ -71,22 +75,21 @@ namespace laba3
 	}
 	class Speciality : Student
 	{
-		protected string Specialty { get; set; }
-		public Speciality(string name, string pol, int group, string specialty)
-			: base(name, pol, group)
+		private string Specialty { get; set; }
+		public Speciality(string name, string sex, int group, string specialty)
+			: base(name, sex, group)
 		{
 			Specialty = specialty;
 		}
 		public Speciality()
-
 		{
 			Console.WriteLine("Введите специальность:");
 			Specialty = Console.ReadLine();
 		}
 		public void OutputInformation()
 		{
-			Console.WriteLine("ФИО: " + Name);
-			Console.WriteLine("Пол: " + Pol);
+			Console.WriteLine("ФИО: " + getName());
+			Console.WriteLine("Пол: " + Sex);
 			Console.WriteLine("Группа: " + Group);
 			Console.WriteLine("Cпециальность: " + Specialty);
 			Console.WriteLine();
@@ -94,15 +97,14 @@ namespace laba3
 		//Перегрузка.
 		public void OutputInformation(params string[] args)
 		{
-			Console.WriteLine("FIO: " + Name);
-			Console.WriteLine("pol: " + Pol);
+			Console.WriteLine("FIO: " + getName());
+			Console.WriteLine("Sex: " + Sex);
 			Console.WriteLine("Group: " + Group);
 			Console.WriteLine("Specialitys: " + Specialty);
 			foreach (var x in args)
 			{
 				Console.WriteLine(x);
 			}
-
 		}
 	}
 	class Program
@@ -121,7 +123,7 @@ namespace laba3
 			}
 			for (int i = 0; i < kol; i++)
 			{
-				mas[i].OutputInformation("Прошла перегрузка\n");
+				mas[i].OutputInformation("Проверка", "Перегрузка");
 			}
 			People.NumberOfObjects();
 			Console.WriteLine(mas[0]["name"]);
