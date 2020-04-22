@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.IO;
-namespace ConsoleApp15
+namespace laba4d
 {
     class Program
     {
