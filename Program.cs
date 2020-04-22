@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Management;
-namespace LR4_pcinfo
+namespace LR4
 {
 	class Program
 	{
