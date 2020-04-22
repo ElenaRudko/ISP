@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Management;
 using System.IO;
+
 namespace ClassLibrary1
 {
     public class BasicInfo
     {
+
         public void print()
         {
+
             foreach (var drive in DriveInfo.GetDrives())
             {
                 try
