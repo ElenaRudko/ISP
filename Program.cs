@@ -5,13 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Management;
-
 namespace LR4_pcinfo
 {
 	class Program
 	{
-
-
 		static void Main(string[] args)
 		{
 			foreach (var drive in DriveInfo.GetDrives())
@@ -32,7 +29,6 @@ namespace LR4_pcinfo
 				catch { }
 			}
 			Console.ReadLine();
-
 		}
 	}
 }
