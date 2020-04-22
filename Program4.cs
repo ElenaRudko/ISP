@@ -12,7 +12,7 @@ namespace laba4d
         static void Main(string[] args)
         {
             Assembly dll = Assembly.Load("laba4");
-            Type tp = dll.GetType("ClassLibrary1.BasicInfo");
+            Type tp = dll.GetType("laba4.BasicInfo");
             object ob = Activator.CreateInstance(tp);
             MethodInfo mi;
             mi = tp.GetMethod("print");
