@@ -37,9 +37,9 @@ namespace ConsoleApp1
 		protected Student student;
 		public Person(string fio,  int education)
 		{
-		student.FIO = fio;
-		Education = Enum.GetName(typeof(Education), education);
-		objectsCounter++;
+			student.FIO = fio;
+			Education = Enum.GetName(typeof(Education), education);
+			objectsCounter++;
 		}
 		public void Information()
 		{
