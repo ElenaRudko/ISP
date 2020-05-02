@@ -18,6 +18,7 @@ namespace ConsoleApp1
 			   return objectsCounter;
 			}
 		}
+		
 		private static int objectsCounter;
 		protected struct Student
               {
@@ -31,6 +32,7 @@ namespace ConsoleApp1
 			}
 		}
 	      }
+		
 		public string Education;
 		protected Student student;
 		public Person(string fio,  int education)
