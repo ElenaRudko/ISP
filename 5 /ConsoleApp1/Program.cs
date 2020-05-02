@@ -22,7 +22,7 @@ namespace ConsoleApp1
 		private static int objectsCounter;
 		protected struct Student
               {
-                string fio;
+               	string fio;
 		public string FIO
 		{
 			get { return fio; }
@@ -68,6 +68,11 @@ class Programmer : Person
 			Console.WriteLine("Курс: " + Course);
 			Console.WriteLine("---------------------------------------------------- " );
 		}
+		public   override string Course
+       		 {
+           		get{ return course; }
+            		set{ course =  value; }
+       		 }
 		public override void Uni()
 		{
 			Console.WriteLine("Университет: БГУИР");
@@ -88,6 +93,11 @@ class Engineer : Person
 			Console.WriteLine("Факультет: " + Faculty);
 			Console.WriteLine("---------------------------------------------------- ");
 		}
+		public   override string Faculty
+       		 {
+           		get{ return faculty; }
+            		set{ faculty =  value; }
+       		 }
 		public override void Uni()
 		{
 			Console.WriteLine("Университет: БГУИР");
@@ -108,12 +118,11 @@ class Tester : Person
 			Console.WriteLine("Возраст: " + Age);
 			Console.WriteLine("---------------------------------------------------- ");
 		}
-		public override string Tester
-        	{
-            		get { return Age; }
-            		set { Age = value; }
-        }
-
+		public   override string Age
+       		 {
+           		get{ return age; }
+            		set{ age =  value; }
+       		 }
 		public override void Uni()
 		{
 			Console.WriteLine("Университет: БГУИР");
@@ -122,19 +131,19 @@ class Tester : Person
 	
 class Program
 	{
-		static void Main(string[] args)
-		{
-			Programmer programmer = new Programmer( "Рудько Елена Сергеевна", 2,4);
-			Engineer engineer = new Engineer( "Пульмановская Екатерина Дмитриевна",  1, "ФРЭ");
-			Tester tester = new Tester( "Петроченко Маргарита Сергеевна",  3, 20);
-			programmer.Uni();
-			programmer.Information();
-			engineer.Uni();
-			engineer.Information();
-			tester.Uni();
-			tester.Information();
-			Person.Number();
-			Console.ReadLine();
-		}
+	static void Main(string[] args)
+	  {
+		Programmer programmer = new Programmer( "Рудько Елена Сергеевна", 2,4);
+		Engineer engineer = new Engineer( "Пульмановская Екатерина Дмитриевна",  1, "ФРЭ");
+		Tester tester = new Tester( "Петроченко Маргарита Сергеевна",  3, 20);
+		programmer.Uni();
+		programmer.Information();
+		engineer.Uni();
+		engineer.Information();
+		tester.Uni();
+		tester.Information();
+		Person.Number();
+		Console.ReadLine();
+	  }
         }
-}
+      }
