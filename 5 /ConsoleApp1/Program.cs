@@ -108,6 +108,12 @@ class Tester : Person
 			Console.WriteLine("Возраст: " + Age);
 			Console.WriteLine("---------------------------------------------------- ");
 		}
+		public override string Tester
+        	{
+            		get { return Age; }
+            		set { Age = value; }
+        }
+
 		public override void Uni()
 		{
 			Console.WriteLine("Университет: БГУИР");
