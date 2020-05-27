@@ -12,7 +12,31 @@ namespace ConsoleApp1
 	{
 	    n_ = n;
 	    m_ = (m > 0) ? m : 1;
-	}	
+	}
+	
+	public Rational(string rational)
+	{
+	    Regex rgx = new Regex(@"/");
+	    string[] result = rgx.Split(rational);
+	    bool successHigher = int.TryParse(result[0], out int higher);
+	    if (successHigher == false)
+	    {
+	        n_ = 5;
+	    }
+	    else
+	    {
+		n_ = higher;
+	    }
+	    bool successLower = int.TryParse(result[1], out int lower);
+	    if (successLower == false)
+	    {
+		m_ = 5;
+	    }
+	    else
+	    {
+		m_ = lower;
+	    }
+	}
 
 	public int N
 	{
